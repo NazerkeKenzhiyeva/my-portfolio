@@ -1,0 +1,266 @@
+:root {
+  --navy: #0b1f3a;
+  --navy-light: #142d52;
+  --paper: #f4f2ed;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--paper);
+  color: var(--navy);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.page {
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero {
+  position: relative;
+  min-height: 94vh;
+  min-height: 720px;
+  padding: 30px clamp(22px, 4vw, 64px);
+  overflow: hidden;
+  background: var(--paper);
+  isolation: isolate;
+}
+
+.hero-kicker,
+.section-number {
+  margin: 0;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero-kicker {
+  position: relative;
+  z-index: 3;
+  color: var(--white);
+}
+
+.hero-title {
+  position: absolute;
+  z-index: 2;
+  top: 34%;
+  left: 50%;
+  width: 100%;
+  margin: 0;
+  color: var(--paper);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(4.5rem, 11vw, 11rem);
+  font-weight: 400;
+  line-height: 0.78;
+  letter-spacing: -0.075em;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+.hero-portrait {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.hero-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-details {
+  position: absolute;
+  z-index: 3;
+  right: clamp(22px, 4vw, 64px);
+  bottom: 28px;
+  left: clamp(22px, 4vw, 64px);
+  display: flex;
+  justify-content: space-between;
+  color: var(--white);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.8fr) minmax(320px, 1.2fr);
+  gap: clamp(50px, 10vw, 160px);
+  min-height: 460px;
+  padding: clamp(70px, 9vw, 140px) clamp(24px, 9vw, 150px);
+  background: var(--navy);
+  color: var(--paper);
+}
+
+.about-heading h2,
+.contact-heading h2 {
+  margin: 14px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.4rem, 7vw, 7rem);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+}
+
+.about .section-number {
+  color: rgba(244, 242, 237, 0.58);
+}
+
+.about-copy {
+  align-self: end;
+  max-width: 680px;
+}
+
+.about-copy p {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.25rem, 2.05vw, 2rem);
+  line-height: 1.45;
+}
+
+.about-copy p + p {
+  margin-top: 1.4em;
+  color: rgba(244, 242, 237, 0.74);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px;
+  width: 100%;
+  background: var(--navy);
+}
+
+.gallery-item {
+  aspect-ratio: 1 / 1;
+  margin: 0;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact {
+  position: relative;
+  min-height: 560px;
+  padding: clamp(75px, 9vw, 140px) clamp(24px, 9vw, 150px) 52px;
+  background: var(--paper);
+  color: var(--navy);
+}
+
+.contact-heading {
+  margin-bottom: clamp(65px, 9vw, 130px);
+}
+
+.contact .section-number {
+  color: rgba(11, 31, 58, 0.58);
+}
+
+.contact-list {
+  margin-left: min(25vw, 360px);
+  border-top: 1px solid rgba(11, 31, 58, 0.45);
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(11, 31, 58, 0.28);
+  font-size: clamp(0.85rem, 1.15vw, 1rem);
+}
+
+.contact-row span:first-child {
+  color: rgba(11, 31, 58, 0.62);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+}
+
+.contact-signature {
+  margin: clamp(70px, 10vw, 150px) 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(4.6rem, 15vw, 14rem);
+  line-height: 0.72;
+  letter-spacing: -0.075em;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: 680px;
+    height: 92svh;
+    padding-top: 22px;
+  }
+
+  .hero-title {
+    top: 15%;
+    font-size: clamp(2.8rem, 12vw, 5.5rem);
+  }
+
+  .hero-portrait {
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-details span:last-child {
+    display: none;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    gap: 70px;
+    padding: 70px 24px 85px;
+  }
+
+  .about-copy {
+    max-width: 560px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .contact {
+    min-height: 520px;
+    padding: 70px 24px 36px;
+  }
+
+  .contact-list {
+    margin-left: 0;
+  }
+
+  .contact-row {
+    grid-template-columns: 0.75fr 1.25fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
